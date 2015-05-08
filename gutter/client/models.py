@@ -297,7 +297,7 @@ class Condition(object):
             return False
 
 
-class Manager(threading.local):
+class UnsafeUnthreadedBaseManager(object):
     """
     The Manager holds all state for Gutter.  It knows what Switches have been
     registered, and also what Input objects are currently being applied.  It
@@ -493,3 +493,8 @@ class Manager(threading.local):
     @property
     def __joined_namespace(self):
         return self.namespace_separator.join(self.namespace)
+
+
+class Manager(UnsafeUnthreadedBaseManager, threading.local):
+    pass
+
