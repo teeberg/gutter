@@ -38,7 +38,6 @@ setup(
     install_requires=[
         'durabledict>=0.9.0',
         'jsonpickle',
-        'werkzeug',
     ],
     setup_requires=setup_requires,
     namespace_packages=['gutter'],
