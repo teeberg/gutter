@@ -7,6 +7,9 @@ gutter.testutils
 """
 
 from functools import wraps
+
+import six
+
 from gutter.client import get_gutter_client
 
 
@@ -39,7 +42,7 @@ class SwitchContextManager(object):
     def gutter(self):
         if self._gutter is None:
             self._gutter = get_gutter_client()
-        elif isinstance(self._gutter, basestring):
+        elif isinstance(self._gutter, six.string_types):
             self._gutter = get_gutter_client(alias=self._gutter)
         return self._gutter
 

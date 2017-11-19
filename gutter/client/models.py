@@ -8,13 +8,13 @@ gutter.models
 
 from __future__ import absolute_import
 
-# Standard Library
 import threading
 from collections import defaultdict
 from functools import partial
 from itertools import ifilter
 
-# External Libraries
+import six
+
 from gutter.client import signals
 
 DEFAULT_SEPARATOR = ':'
@@ -410,7 +410,7 @@ class UnsafeUnthreadedBaseManager(object):
 
         if namespace is None:
             namespace = self.default_namespace
-        elif isinstance(namespace, basestring):
+        elif isinstance(namespace, six.string_types):
             namespace = [namespace]
 
         self.storage = storage

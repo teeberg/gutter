@@ -38,6 +38,7 @@ setup(
     install_requires=[
         'durabledict>=0.9.0',
         'jsonpickle',
+        'six',
     ],
     setup_requires=setup_requires,
     namespace_packages=['gutter'],
