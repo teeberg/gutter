@@ -1,5 +1,3 @@
-from types import NoneType
-
 import six
 
 
@@ -53,7 +51,7 @@ class Container(object):
     the specified input.
     """
 
-    COMPATIBLE_TYPE = NoneType
+    COMPATIBLE_TYPE = type(None)
 
     def __init__(self, inpt):
         self.input = inpt
